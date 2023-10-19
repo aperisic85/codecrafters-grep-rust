@@ -3,6 +3,7 @@ use std::io;
 use std::process;
 
 fn match_pattern(input_line: &str, pattern: &str) -> bool {
+    if pattern.bytes().all(|char| char.is_ascii_digit()) { return false}
     if pattern.chars().count() == 1 {
         return input_line.contains(pattern);
     } else {
