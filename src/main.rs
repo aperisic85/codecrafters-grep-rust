@@ -7,7 +7,7 @@ fn match_pattern(input_line: &str, pattern: &str) -> bool {
     if pattern.chars().count() == 1 {
         return input_line.contains(pattern);
     } else if  pattern == r"\d" {
-        pattern.bytes().any(|charic| charic.is_ascii_digit())
+        input_line.bytes().any(|charic| charic.is_ascii_digit())
     }
 
     else {
